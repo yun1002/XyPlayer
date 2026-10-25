@@ -1,0 +1,30 @@
+# ==========================================================
+# XyPlayer X4 · Nginx 参考规则
+# 注意：Nginx 不会自动读取本文件，请把下面的 location 段
+#      手动粘贴到站点的 server { } 配置中后 reload。
+# ==========================================================
+
+# 1) 禁止下载数据库 / 日志 / 备份 / 设计稿 / 安装包
+location ~* \.(db|sqlite|sqlite3|log|bak|psd|apk|inc|ini|tar|gz|zip)$ {
+    deny all;
+    return 404;
+}
+
+# 2) 保护配置与备份目录（save/config.php 为纯 PHP，本身不会泄露源码，
+#    这里额外兜底，防止被当成静态文件处理）
+location ~* ^/(save|source/bak|cache)/ {
+    location ~* \.(css|js|png|jpg|jpeg|gif|svg|ico|woff2?|ttf|eot)$ {
+        expires 7d;
+        try_files $uri =404;
+    }
+    deny all;
+}
+
+# 3) 隐藏文件
+location ~ /\. {
+    deny all;
+    return 404;
+}
+
+# 4) 关闭目录列表
+autoindex off;

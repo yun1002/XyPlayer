@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-label="XyPlayer 请求处理流程">
+  <defs>
+    <linearGradient id="abg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#0e1a2c"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#182741"/>
+      <stop offset="1" stop-color="#131f34"/>
+    </linearGradient>
+    <linearGradient id="accentline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#818cf8"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#38bdf8" fill-opacity="0.75"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="420" rx="14" fill="url(#abg)"/>
+
+  <g font-family="'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif">
+    <rect x="56" y="34" width="6" height="24" rx="3" fill="url(#accentline)"/>
+    <text x="76" y="53" font-size="21" font-weight="700" fill="#e2e8f0">请求处理流程</text>
+    <text x="196" y="53" font-size="14" fill="#64748b">一次解析请求在系统中的流转</text>
+
+    <!-- 主流程 -->
+    <g>
+      <rect x="104" y="96" width="176" height="86" rx="10" fill="url(#card)" stroke="#2b3b5c"/>
+      <text x="192" y="134" text-anchor="middle" font-size="18" font-weight="600" fill="#e2e8f0">用户访问</text>
+      <text x="192" y="160" text-anchor="middle" font-size="13" fill="#94a3b8">/?v= 链接或片名</text>
+
+      <rect x="308" y="96" width="176" height="86" rx="10" fill="url(#card)" stroke="#2b3b5c"/>
+      <text x="396" y="134" text-anchor="middle" font-size="18" font-weight="600" fill="#e2e8f0">index.php</text>
+      <text x="396" y="160" text-anchor="middle" font-size="13" fill="#94a3b8">路由与配置加载</text>
+
+      <rect x="512" y="96" width="176" height="86" rx="10" fill="url(#card)" stroke="#38bdf8" stroke-opacity="0.55"/>
+      <text x="600" y="134" text-anchor="middle" font-size="18" font-weight="600" fill="#7dd3fc">解析调度</text>
+      <text x="600" y="160" text-anchor="middle" font-size="13" fill="#94a3b8">多接口 · 并发请求</text>
+
+      <rect x="716" y="96" width="176" height="86" rx="10" fill="url(#card)" stroke="#2b3b5c"/>
+      <text x="804" y="134" text-anchor="middle" font-size="18" font-weight="600" fill="#e2e8f0">播放器渲染</text>
+      <text x="804" y="160" text-anchor="middle" font-size="13" fill="#94a3b8">dplayer / h5 等</text>
+
+      <rect x="920" y="96" width="176" height="86" rx="10" fill="url(#card)" stroke="#2b3b5c"/>
+      <text x="1008" y="134" text-anchor="middle" font-size="18" font-weight="600" fill="#e2e8f0">播放页输出</text>
+      <text x="1008" y="160" text-anchor="middle" font-size="13" fill="#94a3b8">PC / 移动端自适应</text>
+    </g>
+
+    <!-- 箭头 -->
+    <g stroke="#38bdf8" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#arrow)">
+      <line x1="284" y1="139" x2="300" y2="139"/>
+      <line x1="488" y1="139" x2="504" y2="139"/>
+      <line x1="692" y1="139" x2="708" y2="139"/>
+      <line x1="896" y1="139" x2="912" y2="139"/>
+    </g>
+
+    <!-- 分隔 -->
+    <line x1="104" y1="216" x2="1096" y2="216" stroke="#ffffff" stroke-opacity="0.07"/>
+
+    <text x="104" y="246" font-size="14" font-weight="600" fill="#64748b" letter-spacing="1">支撑模块</text>
+
+    <g>
+      <rect x="112" y="262" width="226" height="80" rx="10" fill="#111d31" stroke="#26344f"/>
+      <text x="225" y="296" text-anchor="middle" font-size="17" font-weight="600" fill="#cbd5e1">缓存层</text>
+      <text x="225" y="320" text-anchor="middle" font-size="13" fill="#7f8ea6">文件缓存 · Redis</text>
+
+      <rect x="362" y="262" width="226" height="80" rx="10" fill="#111d31" stroke="#26344f"/>
+      <text x="475" y="296" text-anchor="middle" font-size="17" font-weight="600" fill="#cbd5e1">防火墙</text>
+      <text x="475" y="320" text-anchor="middle" font-size="13" fill="#7f8ea6">Blacklist 授权校验</text>
+
+      <rect x="612" y="262" width="226" height="80" rx="10" fill="#111d31" stroke="#26344f"/>
+      <text x="725" y="296" text-anchor="middle" font-size="17" font-weight="600" fill="#cbd5e1">广告过滤</text>
+      <text x="725" y="320" text-anchor="middle" font-size="13" fill="#7f8ea6">AdBlack 自定义规则</text>
+
+      <rect x="862" y="262" width="226" height="80" rx="10" fill="#111d31" stroke="#26344f"/>
+      <text x="975" y="296" text-anchor="middle" font-size="17" font-weight="600" fill="#cbd5e1">配置中心</text>
+      <text x="975" y="320" text-anchor="middle" font-size="13" fill="#7f8ea6">save/config.php</text>
+    </g>
+
+    <text x="112" y="382" font-size="14" fill="#5b6a83">无需数据库，全部配置以 PHP 文件持久化；save/ 与 cache/ 目录权限需 755 以上</text>
+  </g>
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="340" viewBox="0 0 1280 340" role="img" aria-label="XyPlayer X4 智能视频解析系统">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="0.55" stop-color="#111d33"/>
+      <stop offset="1" stop-color="#0a1a2b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#818cf8" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#818cf8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#818cf8" stop-opacity="0.10"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="340" fill="url(#bg)"/>
+  <rect width="1280" height="340" fill="url(#grid)"/>
+  <circle cx="1040" cy="170" r="320" fill="url(#glow)"/>
+  <circle cx="140" cy="330" r="260" fill="url(#glow2)"/>
+
+  <!-- 左侧品牌信息 -->
+  <g font-family="'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif">
+    <rect x="64" y="58" width="296" height="36" rx="18" fill="#38bdf8" fill-opacity="0.10" stroke="#38bdf8" stroke-opacity="0.35"/>
+    <circle cx="86" cy="76" r="4" fill="#34d399"/>
+    <text x="102" y="82" font-size="15" fill="#7dd3fc">v4.22 · PHP 5.6 ~ 8.x 全兼容</text>
+
+    <text x="64" y="176" font-size="78" font-weight="700" letter-spacing="-1">
+      <tspan fill="#f8fafc">XyPlayer</tspan><tspan fill="url(#accent)" dx="16" letter-spacing="0">X4</tspan>
+    </text>
+
+    <text x="66" y="222" font-size="27" font-weight="600" fill="#7dd3fc">智能视频解析系统</text>
+
+    <text x="66" y="258" font-size="19" fill="#94a3b8">零数据库 · 上传即用 · 多接口解析 · 多播放器切换 · 可视化后台</text>
+
+    <g font-size="15" fill="#cbd5e1">
+      <rect x="64" y="280" width="168" height="34" rx="8" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.10"/>
+      <text x="148" y="302" text-anchor="middle">文件 / Redis 缓存</text>
+
+      <rect x="244" y="280" width="142" height="34" rx="8" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.10"/>
+      <text x="315" y="302" text-anchor="middle">10 套平台皮肤</text>
+
+      <rect x="398" y="280" width="122" height="34" rx="8" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.10"/>
+      <text x="459" y="302" text-anchor="middle">5 款播放器</text>
+    </g>
+  </g>
+
+  <!-- 右侧装饰：播放按钮 -->
+  <g>
+    <circle cx="1010" cy="170" r="126" fill="none" stroke="#38bdf8" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="4 8"/>
+    <circle cx="1010" cy="170" r="92" fill="none" stroke="url(#ring)" stroke-width="2"/>
+    <circle cx="1010" cy="170" r="74" fill="#38bdf8" fill-opacity="0.10"/>
+    <circle cx="1010" cy="170" r="74" fill="none" stroke="#38bdf8" stroke-opacity="0.45" stroke-width="1.5"/>
+    <path d="M1030 138 L1030 202 L976 170 Z" fill="#f8fafc"/>
+  </g>
+</svg>

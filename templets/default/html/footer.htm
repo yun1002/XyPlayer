@@ -1,0 +1,5 @@
+<?php 
+echo base64_decode($CONFIG["FOOTER_CODE"]);
+//同一次请求内 class.main.php 已把脚本写入 $_SESSION，此处无需再 session_start（页面已输出，必然失败）
+if(isset($_SESSION['FOOTER_CODE'])){echo $_SESSION['FOOTER_CODE'];} 
+?>

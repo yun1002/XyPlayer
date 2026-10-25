@@ -1,0 +1,30 @@
+# ==========================================================
+# XyPlayer X4 · Apache 基础防护
+# 说明：仅使用 FilesMatch 规则，兼容 Apache 2.2 / 2.4，
+#      若虚拟主机不支持 .htaccess，本文件会被忽略，不会影响站点运行。
+# ==========================================================
+
+# 如需关闭目录列表，可取消下面一行的注释（部分主机不允许，开启后若报 500 请重新注释）
+# Options -Indexes
+
+# 禁止直接下载数据库、日志、备份、设计稿、安装包等敏感文件
+<FilesMatch "\.(db|sqlite|sqlite3|log|bak|psd|apk|inc|ini|tar|gz|zip)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 禁止访问隐藏文件（.git / .env 等）
+<FilesMatch "^\.">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>

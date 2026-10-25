@@ -1,0 +1,57 @@
+/* 播放盒子 */
+.play-box { position:relative;width:15rem;height:12rem;background:#000;border:none;overflow:hidden }
+.play-box iframe { position:relative;width:100%;height:100%;border:none;z-index:0 }
+.play-box .tip { position:absolute;left:0;bottom:0;width:100%;height:3rem;line-height:3rem;text-align:center;background:#000;z-index:99;color:rgba(255,255,255,0.85);display:none }
+.play-box .tip a { color:#1DB69A }
+.play-box .tip i { display:block;position:absolute;width:1.6rem;height:1.6rem;background:url(../images/tip_close.png) no-repeat center;top:0;right:0;background-size:0.7rem 0.7rem;opacity:0.85 }
+
+/* 来源 */
+.from-title { height:1.4rem;line-height:1.4rem;font-size:0.66rem;padding:0 0.5rem;overflow:hidden;color:#333 }
+.from-title span { padding-left:0.3rem;font-size:0.55rem;color:#AAA;font-weight:normal }
+.from { padding-left:0.5rem }
+.from a,.episodes a { display:block;float:left;height:1.7rem;line-height:1.75rem;margin-top:0.3rem;margin-right:0.3rem;text-align:center;border-radius:0.1rem;border:1px solid #DCDFE6;color:#333;font-size:0.5rem;box-sizing:border-box;background:#FFF }
+.from a { padding:0 0.8rem }
+.from a.current,.episodes a.current { border:1px solid #1DB69A;color:#1DB69A;background:#E6F9F4 }
+
+/* 选集 */
+.episodes-title { position:relative;height:2rem;line-height:2rem;font-size:0.56rem;color:#333 }
+.episodes { padding-left:0.5rem }
+.episodes a { min-width:2.08rem }
+.episodes .episodes-title .episodes-control { position:absolute;right:0.2rem;top:-0.1rem }
+.episodes .episodes-title .episodes-control a { width:2.5rem;height:1.6rem;line-height:1.65rem;text-align:center;font-weight:normal;text-indent:0;display:none;border:none;background:#1DB69A;color:#FFF }
+/* 综艺选集 */
+.episodes .episodes-list.float-none a { float:none;margin-right:0.5rem;height:auto;min-height:0.7rem;line-height:0.7rem;padding:0.6rem 0.5rem }
+
+/* 更多信息 */
+.more { position:relative;padding:0 0.5rem;min-height:6.6rem;color:#666 }
+.more i { display:block;position:absolute;width:4.6rem;height:6.2rem;left:0.5rem;background-size:4.6rem 6.2rem;border-radius:0.15rem }
+.more h5,.more span,.more div { display:block;margin-left:5rem;line-height:0.7rem;font-size:0.5rem;margin-bottom:0.1rem }
+.more h5 { font-size:0.6rem;margin-bottom:0.5rem;margin-top:0.1rem;color:#333 }
+.more div { margin-left:0 }
+.more.desc { min-height:0 }
+
+/* ============ 电脑端自适应 ============ */
+@media (min-width:800px) {
+	.play-box { width:100%;max-width:1168px;height:620px;margin:12px auto;background:#000;border-radius:8px }
+	.play-box .tip { height:48px;line-height:48px;font-size:16px }
+	.play-box .tip i { width:32px;height:32px;top:8px;right:8px;background-size:16px 16px }
+
+	.from-title { height:48px;line-height:48px;font-size:18px;padding:0 16px;max-width:1168px;margin:12px auto 0 }
+	.from-title span { font-size:14px }
+	.from { padding-left:16px;max-width:1168px;margin:0 auto }
+	.from a,.episodes a { height:36px;line-height:36px;margin-top:8px;margin-right:10px;border-radius:18px;font-size:14px;padding:0 20px }
+	.episodes a { min-width:48px }
+	.from a.current,.episodes a.current { border:1px solid #1DB69A;color:#1DB69A }
+
+	.episodes-title { height:48px;line-height:48px;font-size:15px;max-width:1168px;margin:8px auto 0;padding:0 16px }
+	.episodes { padding-left:16px;max-width:1168px;margin:0 auto }
+	.episodes .episodes-title .episodes-control a { width:72px;height:32px;line-height:32px;border-radius:16px;font-size:14px }
+	.episodes .episodes-list.float-none a { float:none;margin-right:10px;min-height:24px;line-height:24px;padding:6px 14px;font-size:14px }
+
+	.more { max-width:1168px;margin:12px auto;padding:0 16px;min-height:auto }
+	.more i { position:static;display:inline-block;vertical-align:top;width:200px;height:270px;background-size:200px 270px;border-radius:8px }
+	.more h5,.more span,.more div { display:block;margin-left:220px;line-height:28px;font-size:15px;margin-bottom:2px }
+	.more h5 { font-size:22px;margin-bottom:14px;margin-top:0 }
+	.more div { margin-left:0 }
+	.more.desc { min-height:0;max-width:1168px }
+}

@@ -1,0 +1,23 @@
+# ===== 运行时生成（不入库）=====
+/cache/*
+!/cache/.gitkeep
+/mov/log/*.log
+*.log
+
+# 站点专属配置：默认保留一份可直接运行的模板配置。
+# 若你的 config.php 内含私有接口地址 / 授权码 / 站点密钥，取消下一行注释再提交。
+# /save/config.php
+
+# ===== 系统与编辑器 =====
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# ===== 依赖与部署产物 =====
+node_modules/
+.wrangler/
+*.zip
+*.tar.gz
